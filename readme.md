@@ -1,5 +1,8 @@
-This repository presents the TRAVIS model built for the PARSEME Shared Task 2020 on semisupervised identification of verbal multiword expressions. TRAVIS is a fully feature-independent
-model, relying only on the contextual embeddings. See [(kurfali, 2020)](https://www.diva-portal.org/smash/get/diva2:1524071/FULLTEXT01.pdf) for details.
+# TRAVIS at PARSEME Shared Task 2020
+
+This repository contains the code for the TRAVIS model built for the PARSEME Shared Task 2020 on semisupervised identification of verbal multiword expressions. TRAVIS is a fully feature-independent
+model, relying only on the contextual embeddings. The model ranked second in the open track of the shared task, see [(kurfali, 2020)](https://www.diva-portal.org/smash/get/diva2:1524071/FULLTEXT01.pdf) for details.
+
 
 
 TRAVIS is a tool for performing multi-word expression (MWE) identification via fine-tuning language models.
