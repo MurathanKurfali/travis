@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 ### Multilingual-bert
-batch_size=8
+batch_size=16
+seq_len=250
 langs=('de' 'el' 'eu' 'fr' 'ga', 'hi' 'it' 'pl' 'pt' 'ro' 'sv' 'tr' 'zh')
 for lang in "${langs[@]}"; do
 echo $lang
