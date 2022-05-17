@@ -49,9 +49,9 @@ if __name__ == "__main__":
                 sentence = " ".join([line.split("\t")[1] for line in sent.split("\n") if not line.startswith("#")])
                 sen_len.append(len(sent.split("\n")))
                 bert_size = len(tokenizer.tokenize(sentence))
-                if bert_size > 250:
-                    print(bert_size)
-                    print(" ".join([line.split("\t")[1] for line in sent.split("\n") if not line.startswith("#")]))
+                #if bert_size > 250:
+                #    print(bert_size)
+                #    print(" ".join([line.split("\t")[1] for line in sent.split("\n") if not line.startswith("#")]))
                 bert_sen_len.append(bert_size)
                 for line in sent.split("\n"):
                     if line.startswith("#"): continue
