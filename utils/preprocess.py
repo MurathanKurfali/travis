@@ -82,4 +82,4 @@ if __name__ == "__main__":
                                                                  np.average(bert_sen_len)))
         logging.info(f"***********")
 
-        print("-" * 10)
+        print(f"{lang} is processed")
