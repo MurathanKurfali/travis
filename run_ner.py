@@ -547,6 +547,10 @@ def main():
     model.to(args.device)
     logger.info("Training/evaluation parameters %s", args)
 
+    if args.do_eval or args.do_predict:
+        if not os.path.exists(args.prediction_dir):
+            os.mkdir(args.prediction_dir)
+
     # Training
     if args.do_train:
         if not args.do_eval:
