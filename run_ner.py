@@ -105,7 +105,8 @@ def train(args, train_dataset, model, tokenizer, labels, pad_token_label_id,  la
         model = torch.nn.parallel.DistributedDataParallel(
             model, device_ids=[args.local_rank], output_device=args.local_rank, find_unused_parameters=True
         )
-    args.save_steps = int(t_total/10)
+    if args.save_steps < 0:
+        args.save_steps = int(t_total/10)
     # Train!
     logger.info("***** Running training *****")
     logger.info("  Num examples = %d", len(train_dataset))
@@ -419,7 +420,7 @@ def main():
     parser.add_argument("--warmup_steps", default=0, type=int, help="Linear warmup over warmup_steps.")
 
     parser.add_argument("--logging_steps", type=int, default=500, help="Log every X updates steps.")
-    parser.add_argument("--save_steps", type=int, default=500, help="Save checkpoint every X updates steps.")
+    parser.add_argument("--save_steps", type=int, default=-1, help="Save checkpoint every X updates steps. Default ten times per training.")
     parser.add_argument(
         "--eval_all_checkpoints",
         action="store_true",
